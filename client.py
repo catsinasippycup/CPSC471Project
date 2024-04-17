@@ -41,6 +41,7 @@ while True:
     
     if command.startswith('get'):
         
+        # Send all commands in order to get data from server
         connSock.send(command.encode())
         
         # The buffer to all data received from the client.
