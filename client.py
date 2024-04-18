@@ -69,6 +69,17 @@ while True:
         
         print ("The file data is: ")
         print (fileData, "\n")
+		
+    elif command.startswith('ls'):
+		# second the 'ls' command to server
+        connSock.send(command.encode())
+		
+        # receive list of files from the server
+        data = connSock.recv(4096).decode()
+
+        print('Files in the directory:')
+        # print retrieved list of files
+        print(data)
         
     elif command.startswith('quit'):
         print("Disconnecting")

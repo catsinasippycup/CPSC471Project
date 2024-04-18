@@ -80,6 +80,20 @@ while True:
 
         except FileNotFoundError:
             print("File not found")
+
+    elif command.startswith('ls'):
+        try:
+            # get list of files in current directory
+            files = os.listdir('.')
+            # convert list of files into string seprated by new lines
+            files_list = "\n".join(files)
+            # send list of fiels back to the client
+            client_socket.sendall(files_list.encode())
+            print ('List command success')
+        except FileNotFoundError:
+            # directory not found error
+            client_socket.send("Directory not found".encode())
+            
     else:
         print(f"Client: {client_address} disconnected")
         break
