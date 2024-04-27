@@ -46,6 +46,8 @@ print("Server listening on port", listenPort)
 client_socket, client_address = welcomeSock.accept()
 print(f"Connection from {client_address} established.")
 
+fileno = 0
+
 # Keep sending until all is sent
 while True:
     # Receive the data
@@ -93,7 +95,38 @@ while True:
         except FileNotFoundError:
             # directory not found error
             client_socket.send("Directory not found".encode())
-            
+
+    elif command.startswith("put"):
+        # Send all commands in order to get data from server
+        client_socket.send(command.encode())
+        
+        # The buffer to all data received from the client.
+        fileData = ""
+        
+        # The temporary buffer to store the received data.
+        recvBuff = ""
+        
+        # The size of the incoming file
+        fileSize = 0
+        
+        # The buffer containing the file size
+        fileSizeBuff = ""
+        
+        # Receive the first 10 bytes indicating the size of the file
+        fileSizeBuff = recvAll(client_socket, 10)
+        
+        # Get the file size
+        fileSize = int(fileSizeBuff)
+        
+        print (f"The file size is {fileSize} bytes" )
+        
+        # Get the file data
+        fileData = recvAll(client_socket, fileSize)
+        
+        fileName = command.split("\\")[-1]
+        fileOut = open(fileName, "w")
+        fileOut.write(fileData)
+        fileOut.close()
     else:
         print(f"Client: {client_address} disconnected")
         break
