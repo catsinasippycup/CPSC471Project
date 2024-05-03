@@ -97,8 +97,6 @@ while True:
             client_socket.send("Directory not found".encode())
 
     elif command.startswith("put"):
-        # Send all commands in order to get data from server
-        client_socket.send(command.encode())
         
         # The buffer to all data received from the client.
         fileData = ""
