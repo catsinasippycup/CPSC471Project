@@ -37,7 +37,7 @@ print("Connected to server")
  
 while True:
     command = input("ftp> ")
-    
+    recvBuff = ""
     if command.startswith('get'):
         
         # Send all commands in order to get data from server
