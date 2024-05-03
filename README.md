@@ -14,9 +14,9 @@
     - Ex: `python client.py localhost 4444`
 3. Once connected, `client.py` will indicate you are connected and in `server.py` will indicate a connection has been established. `client.py` will print `ftp>` meaning its ready to take commands.
 4.  There are only four commands `get`, `put`, `ls` and `quit` respectively.
-    - `get` downloads a file from the server via <filename>.
+    - `get` downloads a file from the server via filename.
         - `ftp>get file.txt`
-    -   `put` uploads a file to the server you must specify an exact path with <filename>.
+    -   `put` uploads a file to the server you must specify an exact path with filename.
         - `ftp>put C:\Users\foo\Desktop\example.txt`
     -   `ls` lists all the files on the server.
         - `ftp>ls`
