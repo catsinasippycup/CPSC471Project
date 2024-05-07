@@ -1,7 +1,7 @@
 # CPSC 471 Project
 
 # Members
-* James peou
+* James Peou (jamespeou@csu.fullerton.edu)
 * Renell Miller (reneter@csu.fullerton.edu)
 * Jhoshua Ampo (jampo@csu.fullerton.edu)
 * Carlos Fuentes (cffuentes@csu.fullerton.edu)
