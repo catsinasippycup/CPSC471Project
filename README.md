@@ -2,10 +2,10 @@
 
 # Members
 * James peou
-* Renell Miller
-* Jhoshua Ampo 
-* Carlos Fuentes
-* Thanedh Sithisombath 
+* Renell Miller (reneter@csu.fullerton.edu)
+* Jhoshua Ampo (jampo@csu.fullerton.edu)
+* Carlos Fuentes (cffuentes@csu.fullerton.edu)
+* Thanedh Sithisombath (thanedh@csu.fullerton.edu)
 
 # How to Run
 1. With a terminal open run `python server.py <SERVER PORT>` and replace `<SERVER PORT>` with your own port number:
